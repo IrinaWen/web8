@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Форма</title>
+  <script src="jquery.js"></script>
+  <link rel="stylesheet" 
+          href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <script src="forwife.js"></script>
+        <link href="forwife.css" rel="stylesheet"/>
+</head>
+<body>
+<button>Показать форму</button>
+
+<div class="popup">
+  <div class="popup__container">
+    <div class="popup__wrapper">
+      <div id="blablabla">
+        <form role="form" action="/requestFine" autocomplete="off" method="POST">
+          <label>
+            ФИО: <br />
+            <input name = "name" type = "text" class="sto"
+            value = "Иванов Иван Иванович"/>
+        </label><br />
+        <label> 
+            Телефон: <br />
+            <input name = "telephone" type = "tel" class="sto"
+            value = "8-987-550-23-23"/>
+        </label><br />
+        <label>
+            E-mail: <br />
+            <input name = "email" type = "email" class="sto"
+            value = "example@mail.ru"/>
+        </label><br />
+        <label>
+          Организация: <br />
+          <input name = "name" type = "text" class="sto"
+          value = "ООО СобакаГавкает"/>
+      </label><br />
+      <label>
+        Комментарий к заказу:<br />
+            <textarea name="biography">Например: отправить сообщение об отправке посылки в Telegram</textarea></label><br />
+            <label><input type="checkbox" name="contract" id="contract-checkbox" required> />
+              Я подтверждаю свое согласие с политикой обработки персональных данных</label><br />
+          <br/><button type="submit" class="btn btn-success" disabled id="submitButton">Отправить</button>
+
+            <script>
+              const checkbox = document.getElementById("contract-checkbox");
+              const submitButton = document.getElementById("submitButton");
+          
+              checkbox.addEventListener("change", () => {
+                submitButton.disabled = !checkbox.checked;
+              });
+            </script>
+
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
